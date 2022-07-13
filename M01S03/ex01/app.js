@@ -2,13 +2,14 @@ var object = {
   name: 'Dragos',
   surname: 'Iordache',
   age: 32,
+  petOwner: true,
+  carOwner: true,
 };
 
 console.warn(
   `Afiseaza fraza “Ma numesc xxx yyy si am xx ani.”
   in consola folosind operatorul de concatenare`,
 );
-
 console.log(
   'Ma numesc ' +
     object.name +
@@ -30,7 +31,19 @@ console.warn(
   in consola folosind operatorul de concatenare
   `,
 );
-
 console.log(
   object.name + ' ' + object.surname + ' are ' + object.age + ' ani.',
 );
+
+console.warn(
+  `Afiseaza fraza “xxx s-a nascut in aaaa.” Foloseste tot anul curent pentru a scadea varsta.`,
+);
+console.log(object.name + ' s-a nascut in ' + (2022 - object.age) + '.');
+
+// nu am inteles aceasta cerinta, any tips?
+console.warn(
+  `Folosind codul din index.html, introdu datele tale si afiseaza in consola numele mic si varsta
+`,
+);
+
+// nu am inteles aceasta cerinta, any tips?
