@@ -46,4 +46,5 @@ console.warn(
 `,
 );
 
-// nu am inteles aceasta cerinta, any tips?
+console.log(object.name);
+console.log(object.age.toString());

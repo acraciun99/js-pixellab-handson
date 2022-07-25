@@ -44,8 +44,8 @@ andra.friends.larry = larry;
 carol.friends.andra = andra;
 andra.friends.carol = carol;
 
-delete person.friends.larry;
-delete larry.friends.person;
+// delete person.friends.larry;
+// delete larry.friends.person;
 
 console.warn(`Afiseaza numele complet al lui Person folosind obiectul Larry.`);
 console.log(
@@ -60,4 +60,16 @@ console.log(
   carol.friends.andra.friends.person.name +
     ' ' +
     carol.friends.andra.friends.person.surname,
+);
+
+console.warn(`Afiseaza numele complet a lui Larry folosind obiectul Person.`);
+console.log(person.friends.larry.name + ' ' + person.friends.larry.surname);
+
+console.warn(
+  `Folosind obiectul Andra afiseaza numarul total de caractere al numelui complet al lui Person.`,
+);
+console.log(
+  (
+    andra.friends.person.name.length + andra.friends.person.surname.length
+  ).toString(),
 );
