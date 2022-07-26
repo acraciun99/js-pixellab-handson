@@ -8,3 +8,5 @@ for (var i = 0; i <= 100; i++) {
 
   console.log(`Acest numar este multiplu de ${number}.`);
 }
+
+var maxNumber = prompt;
