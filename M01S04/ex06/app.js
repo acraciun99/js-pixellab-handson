@@ -189,9 +189,9 @@ console.warn(
   ` Folosind un for, afiseaza numarul total de ani pe care il au persoanele din arrayul friends `,
 );
 
-sumAge = 0;
+var sumAge = 0;
 for (i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
-  ageSum = person.friends.age + sumAge;
-  console.log(ageSum);
+  sumAge = friend.age + sumAge;
 }
+console.log(sumAge.toString());
