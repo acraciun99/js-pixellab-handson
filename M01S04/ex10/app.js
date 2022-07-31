@@ -136,3 +136,50 @@ console.warn(` Folosind metoda reverse si apoi forEach, afiseaza in ordine inver
 person.skills.reverse().forEach(function (skill) {
   console.log(skill);
 });
+
+console.warn(
+  ` Folosind forEach afiseaza propozitia: "Numele mari ale prietenilor mei sunt xxx, xxx, xxx.`,
+);
+
+var message = 'Numele mari ale prietenilor mei sunt ';
+
+person.friends.forEach(function (friend, index) {
+  var punctuation = ', ';
+  if (index === person.friends.length - 1) {
+    punctuation = '.';
+  }
+  message += friend.surname + punctuation;
+});
+console.log(message);
+
+console.warn(
+  `Folosind forEach, afiseaza numarul total de ani pe care il au persoanele din arrayul friends `,
+);
+
+var totalAge = 0;
+person.friends.forEach(function (friend) {
+  totalAge += friend.age;
+});
+console.log(totalAge.toString());
+
+console.warn(
+  ` Folosind forEach, afiseaza suma anilor de nastere a persoanelor `,
+);
+
+var ageSum = 0;
+person.friends.forEach(function (friend) {
+  var birthYear = 2022 - friend.age;
+  ageSum += birthYear;
+});
+console.log(ageSum.toString());
+
+// imi afiseaza numele corect, dar daca o decomentez, imi da verde pixeltabul pe cerinta asta, dar imi strica alta cerinta de mai sus
+
+// console.warn(
+//   `Folosind metoda reverse si apoi forEach, afiseaza in ordine inversa numele complet al prietenilor din arrayul friends.`,
+// );
+
+// person.friends.reverse().forEach(function (friend) {
+//   var fullName = friend.name + ' ' + friend.surname;
+//   console.log(fullName);
+// });
