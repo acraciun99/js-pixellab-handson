@@ -133,9 +133,12 @@ console.log(message.trim());
 console.warn(` Folosind metoda reverse si apoi forEach, afiseaza in ordine inversa elementele arrayului skills.
 `);
 
-person.skills.reverse().forEach(function (skill) {
-  console.log(skill);
-});
+person.skills
+  .slice()
+  .reverse()
+  .forEach(function (skill) {
+    console.log(skill);
+  });
 
 console.warn(
   ` Folosind forEach afiseaza propozitia: "Numele mari ale prietenilor mei sunt xxx, xxx, xxx.`,
