@@ -4,6 +4,7 @@
 
 const button = document.getElementById('clicker');
 const removeButton = document.getElementById('remove');
+const queryButton = document.getElementById('query');
 
 button.addEventListener('click', clickHandler);
 removeButton.addEventListener('click', function () {
@@ -14,3 +15,16 @@ removeButton.addEventListener('click', function () {
 function clickHandler() {
   alert('Ai apasat butonul!!!!');
 }
+
+queryButton.addEventListener('click', clickHandler);
+
+function clickHandler() {
+  let age = prompt('Introdu varsta');
+  let message = `Ai ${age} ani`;
+  prompt(message);
+}
+
+// Creaza un paragraf cu idul message si folosind getElementById()
+// stocheaza elementul intr-o variabila, apoi folosind innerText, afiseaza mesajul de mai devreme in acest paragraf.
+const paragraph = document.getElementById('message');
+paragraph.innerText = `Ai 29 ani.`;

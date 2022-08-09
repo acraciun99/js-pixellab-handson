@@ -48,6 +48,4 @@ function aggregateSurfaceArea() {
   const resultArea = rectangleArea1 + rectangleArea;
   console.log(resultArea);
 }
-aggregateSurfaceArea();
-
 // nu s a inverzit pixeltab
