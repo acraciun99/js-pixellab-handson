@@ -3,9 +3,31 @@ const car = {
   color: 'black',
   wheels: 4,
   speed: 50,
+  topSpeed: 280,
+  topReverseSpeed: -60,
   // flags:
   isTrunkOpen: false,
   areLightson: false,
+
+  stop: function () {
+    this.speed = 0;
+    console.log(this.speed);
+  },
+
+  setSpeed: function (speed) {
+    if (speed > this.topSpeed) {
+      this.speed = this.topSpeed;
+
+      return;
+    }
+
+    if (speed < this.topReverseSpeed) {
+      this.speed = this.topReverseSpeed;
+
+      return;
+    }
+    this.speed = speed;
+  },
 
   accelerate: function () {
     this.speed++;
@@ -37,3 +59,7 @@ const car = {
     }, 5000);
   },
 };
+
+console.warn(`Afiseaza propozitia: "Masina era marca make si se deplasa cu speed km/h.".
+`);
+console.log(`Masina era marca ${car.make} si se deplasa cu ${car.speed} km/h.`);
