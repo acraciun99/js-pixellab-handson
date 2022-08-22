@@ -12,7 +12,7 @@ const $p = $('<p>', {
 });
 const $msg = $('<p>', {
   id: 'message',
-  text: 'parola nu trebuie sa fie mai mica de 5 caractere',
+  text: 'Parola nu trebuie sa fie mai mica de 5 caractere',
 });
 
 const $container = $('.container');
@@ -31,4 +31,61 @@ $('<span>', {
 
 $('<h2>', {
   text: 'Mesaje',
+}).prependTo($container);
+
+// $('<div>', {
+//   class: 'navigation',
+//   text: 'x'
+// }).after($container)wrong
+
+$container.after(
+  $('<div>', {
+    class: 'navigation',
+  }),
+);
+
+$('.navigation').append(
+  $('<a>', {
+    text: 'Primul link',
+    href: '/',
+    title: 'Test',
+    class: 'nav-link',
+  }),
+);
+
+$('.navigation .nav-link')
+  .before(
+    $('<h2>', {
+      text: 'Navigate',
+    }),
+  )
+  .prepend(
+    $('<sup>', {
+      text: 1,
+    }),
+  );
+
+$container.before(
+  $('<h1>', {
+    text: 'Invat jQuery',
+  }),
+);
+
+const $docs = $('<p>', {
+  text: 'Documentatia jQuery poate fi gasita ',
 });
+$docs
+  .append(
+    $('<a>', {
+      href: 'https://api.jquery.com/',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      text: 'aici',
+    }),
+  )
+  .append(
+    $('<span>', {
+      text: '.',
+    }),
+  )
+  .insertAfter($('.navigation'));
