@@ -51,10 +51,13 @@ class Car {
     this.areLightsOn = false;
   }
 
-  // Sugestii? nu inteleg de pe net cum fac setTImeout la o metoda
   flashLights() {
     this.turnLightsOn();
-    this.turnLightsOff;
+    const self = this;
+
+    setTimeout(function () {
+      self.turnLightsOff();
+    }, 3000);
   }
 }
 
@@ -62,3 +65,11 @@ const audi = new Car('Audi', 'black', 4, 50);
 const opel = new Car('Opel', 'gray', 4, 40);
 
 const cars = [audi, opel];
+
+cars.forEach(function (car) {
+  console.log(
+    `Masina era marca ${car.make} si se deplasa cu ${car.speed} km/h.`,
+  );
+
+  console.log(`Viteza noua este ${car.speed - 5} km/h.`);
+});

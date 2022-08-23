@@ -64,6 +64,56 @@ class Car {
     return this;
   }
 
+  engageBreak() {
+    this.lightBack.classList.add('light--on');
+
+    return this;
+  }
+
+  disengageBreak() {
+    this.lightBack.classList.remove('light--on');
+
+    return this;
+  }
+
+  changeTireColor(wheelBackcolor, wheelFrontcolor) {
+    this.wheelBack.style.backgroundColor = wheelBackcolor;
+    this.wheelFront.style.backgroundColor = wheelFrontcolor;
+
+    return this;
+  }
+
+  changeCapColor(hubCapBackcolor, hubCapFrontcolor) {
+    this.hubCapBack.style.backgroundColor = hubCapBackcolor;
+    this.hubCapFront.style.backgroundColor = hubCapFrontcolor;
+
+    return this;
+  }
+
+  moveTo(positionX, positionY) {
+    this.positionX = positionX;
+    this.positionY = positionY;
+
+    this.frame.style.left = `${positionX}px`;
+    this.frame.style.top = `${positionY}px`;
+
+    return this;
+  }
+
+  toggleHazards() {
+    const self = this;
+
+    setInterval(function () {
+      if (self.intervalID !== 0) {
+        self.turnLightOn();
+      } else {
+        self.turnLightOff();
+      }
+    }, 3000);
+
+    return self;
+  }
+
   e(elementName) {
     // wrappers in action
     return document.createElement(elementName);
@@ -75,3 +125,9 @@ car01.render();
 const car02 = new Car(16, 250, 'blue').render().turnLightOn();
 const car03 = new Car(16, 16, 'yellow');
 car03.render();
+
+car03.changeCapColor('green', 'yellow');
+car02.changeTireColor('green', 'yellow');
+car02.moveTo(200, 200);
+
+car02.render().toggleHazards();

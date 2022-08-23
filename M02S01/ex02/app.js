@@ -9,27 +9,34 @@ class Vehicle {
   }
 
   displaySpeed() {
-    console.log(`Viteza curenta este: `.this.speed);
-  }
-
-  accelerate() {
-    this.speed++;
-    this.displaySpeed();
-  }
-
-  decelerate() {
-    this.speed--;
-    this.displaySpeed();
+    console.log(`Viteza curenta este: ${this.speed}.`);
   }
 
   setSpeed(speed) {
     if (speed > this.topSpeed) {
       this.speed = this.topSpeed;
+
+      this.displaySpeed();
+      return;
+    }
+
+    if (speed < this.topReverseSpeed) {
+      this.speed = this.topReverseSpeed;
+
+      this.displaySpeed();
       return;
     }
 
     this.speed = speed;
     this.displaySpeed();
+  }
+
+  accelerate() {
+    this.setSpeed(this.speed + 1);
+  }
+
+  decelerate() {
+    this.setSpeed(this.speed - 1);
   }
 }
 
@@ -59,7 +66,7 @@ bike.decelerate();
 
 class Tricycle extends Vehicle {
   constructor(make, color, speed, topSpeed) {
-    super(make, color, 3, speed, topSpeed);
+    super(make, color, 3, speed, 20, 0);
   }
   decelerate() {
     if (--this.speed < 0) {
